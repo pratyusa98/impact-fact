@@ -1,7 +1,36 @@
-import altair as alt
-import numpy as np
-import pandas as pd
 import streamlit as st
+import json
 
+# Load JSON data from file
+with open('output.json', 'r') as file:
+    json_data = json.load(file)
 
-st.title("Hello")
+def get_impact_factor_by_partial_name(partial_name, data):
+    matching_journals = []
+    partial_name = partial_name.lower()  # Convert to lowercase for case-insensitive matching
+    for entry in data:
+        if partial_name in entry['Journal name'].lower():
+            matching_journals.append((entry['Journal name'], entry['2022 JIF']))
+    
+    # Sort the matching journals by impact factor in descending order
+    matching_journals.sort(key=lambda x: x[1], reverse=True)
+    return matching_journals
+
+# Streamlit UI
+st.title("Journal Impact Factor Search")
+
+# Input field for partial journal name
+partial_name = st.text_input("Enter partial journal name:", "")
+
+# Button to trigger search
+if st.button("Search"):
+    if partial_name:
+        matching_journals = get_impact_factor_by_partial_name(partial_name, json_data)
+        if matching_journals:
+            st.write("Matching Journals (sorted by impact factor, descending):")
+            for journal, impact_factor in matching_journals:
+                st.write(f"- {journal}: {impact_factor}")
+        else:
+            st.write(f"No journals found matching the partial name '{partial_name}'")
+    else:
+        st.write("Please enter a partial journal name.")
