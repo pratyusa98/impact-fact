@@ -2,7 +2,7 @@ import streamlit as st
 import json
 
 # Load JSON data from file
-with open('output.json', 'r') as file:
+with open('https://raw.githubusercontent.com/pratyusa98/impact-fact/main/output.json', 'r') as file:
     json_data = json.load(file)
 
 def get_impact_factor_by_partial_name(partial_name, data):
