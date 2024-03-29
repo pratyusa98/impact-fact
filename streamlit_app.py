@@ -34,7 +34,9 @@ def get_impact_factor_by_partial_name(partial_name, data):
     return matching_journals
 
 # Streamlit UI
+# Streamlit UI with reduced text size
 st.title("Journal Citation Reports (JCR): Impact factor 2023")
+st.markdown("<h2 style='text-align: center;'>Journal Citation Reports (JCR): Impact factor 2023</h2>", unsafe_allow_html=True)
 
 # Input field for partial journal name
 partial_name = st.text_input("Enter partial journal name:", "")
