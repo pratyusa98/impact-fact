@@ -1,9 +1,22 @@
 import streamlit as st
 import json
+import requests
 
-# Load JSON data from file
-with open('https://raw.githubusercontent.com/pratyusa98/impact-fact/main/output.json', 'r') as file:
-    json_data = json.load(file)
+# Fetch JSON data from URL
+url = 'https://raw.githubusercontent.com/pratyusa98/impact-fact/main/output.json'
+response = requests.get(url)
+if response.status_code == 200:
+    json_data = json.loads(response.text)
+else:
+    print(f"Failed to fetch JSON data from {url}")
+    json_data = None
+
+# Use json_data as needed
+
+
+# # Load JSON data from file
+# with open('https://raw.githubusercontent.com/pratyusa98/impact-fact/main/output.json', 'r') as file:
+#     json_data = json.load(file)
 
 def get_impact_factor_by_partial_name(partial_name, data):
     matching_journals = []
