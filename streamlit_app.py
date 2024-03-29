@@ -41,8 +41,13 @@ if st.button("Search"):
         matching_journals = get_impact_factor_by_partial_name(partial_name, json_data)
         if matching_journals:
             st.write("Matching Journals (sorted by impact factor, descending):")
-            for journal, impact_factor in matching_journals:
-                st.write(f"- {journal}: {impact_factor}")
+            # Render results with vertical scrollbar
+            st.markdown(
+                "<div style='height: 300px; overflow-y: scroll;'>"
+                + "\n".join([f"- {journal}: {impact_factor}" for journal, impact_factor in matching_journals])
+                + "</div>", 
+                unsafe_allow_html=True
+            )
         else:
             st.write(f"No journals found matching the partial name '{partial_name}'")
     else:
