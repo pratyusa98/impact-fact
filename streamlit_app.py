@@ -54,3 +54,7 @@ if st.button("Search"):
             st.write(f"No journals found matching the partial name '{partial_name}'")
     else:
         st.write("Please enter a partial journal name.")
+
+# Footer
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("@copyright Pratyusa Nit rourkela 2023")
