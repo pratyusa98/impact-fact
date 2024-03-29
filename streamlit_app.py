@@ -55,13 +55,10 @@ if st.button("Search"):
     else:
         st.write("Please enter a partial journal name.")
 
-# Get current year
-current_year = datetime.datetime.now().year
-
-# Render footer with dynamic year
+# Render footer
 st.markdown(
-    f"<footer style='text-align: center; font-size: 12px;'>"
-    f"&copy; Copyright Pratyusa Nit Rourkela {current_year}"
-    "</footer>",
+    "<footer style='text-align: center; font-size: 12px;'>"
+    + "&copy; Copyright Pratyusa Nit Rourkela 2023"
+    + "</footer>",
     unsafe_allow_html=True
 )
