@@ -1,6 +1,10 @@
 import streamlit as st
 import json
 import requests
+import datetime
+
+# Get current year
+current_year = datetime.datetime.now().year
 
 # Fetch JSON data from URL
 url = 'https://raw.githubusercontent.com/pratyusa98/impact-fact/main/output.json'
@@ -55,10 +59,10 @@ if st.button("Search"):
     else:
         st.write("Please enter a partial journal name.")
 
-# Render footer
+# Render footer with dynamic year
 st.markdown(
-    "<footer style='text-align: center; font-size: 12px;'>"
-    + "&copy; Copyright Pratyusa Nit Rourkela 2023"
-    + "</footer>",
+    f"<footer style='text-align: center; font-size: 12px;'>"
+    f"&copy; Copyright Pratyusa Nit Rourkela {current_year}"
+    "</footer>",
     unsafe_allow_html=True
 )
