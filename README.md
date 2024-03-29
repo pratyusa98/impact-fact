@@ -6,6 +6,6 @@ This user-friendly tool aims to streamline your research process and provide val
 Access the application through the provided link and witness the difference it can make in your scholarly endeavors. 
 Happy researching!
 
-Click now and search..... [https://lnkd.in/gKWuKQpM](https://impactfact-7ry12urx09s.streamlit.app/)
+Click now and search..... https://impactfact-7ry12urx09s.streamlit.app/
 
 Moreover, since it is open-source, you can expand the range of journal names along with their corresponding impact factors by simply updating the JSON file provided. 
