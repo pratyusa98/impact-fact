@@ -7,7 +7,7 @@ import datetime
 current_year = datetime.datetime.now().year
 
 # Fetch JSON data from URL
-url = 'https://raw.githubusercontent.com/pratyusa98/impact-fact/main/output.json'
+url = 'https://raw.githubusercontent.com/pratyusa98/impact-fact/main/Impact_Factor_2023.json'
 response = requests.get(url)
 if response.status_code == 200:
     json_data = json.loads(response.text)
