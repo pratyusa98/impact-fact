@@ -42,12 +42,14 @@ if st.button("Search"):
         if matching_journals:
             st.write("Matching Journals (sorted by impact factor, descending):")
             # Render results with vertical scrollbar
+            # Render results with vertical scrollbar and line breaks
             st.markdown(
                 "<div style='height: 300px; overflow-y: scroll;'>"
-                + "\n".join([f"- {journal}: {impact_factor}" for journal, impact_factor in matching_journals])
+                + "<br>".join([f"- {journal}: {impact_factor}" for journal, impact_factor in matching_journals])
                 + "</div>", 
                 unsafe_allow_html=True
             )
+
         else:
             st.write(f"No journals found matching the partial name '{partial_name}'")
     else:
