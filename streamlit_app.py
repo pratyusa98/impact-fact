@@ -66,3 +66,11 @@ st.markdown(
     "</footer>",
     unsafe_allow_html=True
 )
+# Render citation
+st.markdown(
+    "<p style='text-align: center; font-size: 10px;'>"
+    "(PDF) Journal Citation Reports (JCR): Impact factor 2023 (web of ... (n.d.)."
+    "<a href='https://www.researchgate.net/publication/371935355_Journal_Citation_Reports_JCR_Impact_Factor_2023_Web_of_Science'>Link</a>"
+    "</p>",
+    unsafe_allow_html=True
+)
